@@ -5,9 +5,7 @@ public class TicTacToe {
 
 	public static void main(String[] args) throws IOException {
 		Scanner reader = new Scanner(System.in);
-		char[][] board = {{' ', ' ', ' '},
-				          {' ', ' ', ' '},
-				          {' ', ' ', ' '}};
+		char[][] board = {{' ', ' ', ' '},{' ', ' ', ' '},{' ', ' ', ' '}};
 
 		printBoard(board);
 
