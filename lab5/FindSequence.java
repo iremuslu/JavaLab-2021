@@ -6,6 +6,7 @@ public class FindSequence {
 
 	public static void main(String[] args) throws FileNotFoundException{
 		int matrix[][] = readMatrix();
+		printMatrix(matrix);
 
 		boolean found = false;
 search: for (int i=0; i< matrix.length; i++) {
@@ -16,7 +17,6 @@ search: for (int i=0; i< matrix.length; i++) {
 				}
 			}
 		}
-			
 		if (found) {
 			System.out.println("A sequence is found");
 		}
@@ -25,10 +25,23 @@ search: for (int i=0; i< matrix.length; i++) {
 	}
 
 	private static boolean search (int number, int[][]matrix, int row, int col) {
-		
-		
-		return false;
-
+		if(row<0 || row>9 || col<0 || col>9){
+			return false;
+		}
+		boolean found;
+		if(number==9){
+			found=number==matrix[row][col];
+		}
+		else{
+			found = (number == matrix[row][col]) && (search(number+1 , matrix ,row+1 , col) ||
+							search(number+1 , matrix ,row-1 , col) ||
+							search(number+1 , matrix , row , col+1) ||
+							search(number+1 , matrix , row , col-1));
+		}
+		if(found){
+			matrix[row][col] = 9-matrix[row][col];
+		}
+		return found;
 	}
 
 	private static int[][] readMatrix() throws FileNotFoundException{
