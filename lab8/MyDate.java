@@ -22,7 +22,6 @@ public class MyDate {
 		}else{
 			day = newDay;
 		}
-
 	}
 
 

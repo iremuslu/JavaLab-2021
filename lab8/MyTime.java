@@ -22,8 +22,6 @@ public class MyTime {
         this.hour=newHour;
         return dayDiff;
     }
-
-
     public int incrementMinute(int value) {
         int hourDiff=(minute+value)/60;
         int newMinute=(minute+value)%60;

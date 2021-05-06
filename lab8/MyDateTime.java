@@ -98,11 +98,9 @@ public class MyDateTime {
             return thisHour < anotherHour;
         }
     }
-
     public boolean isAfter(MyDateTime anotherDateTime) {
         return !(isBefore(anotherDateTime));
     }
-
     public String dayTimeDifference(MyDateTime anotherDateTime) {
         int dayDifference = this.date.dayDifference(anotherDateTime.date);
         int minuteDifference = this.time.minuteDifference(anotherDateTime.time);
